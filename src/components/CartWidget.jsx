@@ -9,8 +9,8 @@ const CartWidget = () => {
       size='sm' 
       color='purple.800' 
       as={AiOutlineShopping}
-                _hover={{ bg: 'purple.600', border: 'none' }} 
-          _active={{ bg: 'purple.600', border: 'none'}}
+      _hover={{ bg: 'purple.600', border: 'none' }} 
+      _active={{ bg: 'purple.600', border: 'none'}}
       />
       <Text borderRadius="full" justify='center' align='center' bg='purple.500' 
       style={{ 

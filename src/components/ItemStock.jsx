@@ -24,12 +24,12 @@ const ItemStock = ({stock}) => {
       <Flex direction='column' alignItems='center' gap='2'>
         <Text fontSize='2xl'>Cantidad</Text>
           <Flex justifyContent='space-between' maxW='180px' alignItems='center' gap='10' bgColor='gray.200'  border='1px' borderColor='purple.800' borderRadius='md' >
-            <IconButton onClick={Add} aria-label='Add' bgColor='white' colorScheme='white' icon={<MdAdd color="black" />} />
-            <Text fontSize='lg'>{numero}</Text>
             <IconButton onClick={Remove} aria-label='Subtract' bgColor='white' colorScheme='white' icon={<MdRemove color="black" />} />
+            <Text fontSize='lg'>{numero}</Text>
+            <IconButton onClick={Add} aria-label='Add' bgColor='white' colorScheme='white' icon={<MdAdd color="black" />} />
           </Flex>
       </Flex>
-      <Button onClick={onAdd} as='b' size='lg' bg='purple.800' color='white'>Agregar al carrito </Button>
+      <Button cursor='pointer' _hover={{ bg: 'purple.600' }} onClick={onAdd} as='b' size='lg' bg='purple.800' color='white'>Agregar al carrito </Button>
     </Flex>
     </>
   )

@@ -1,24 +1,25 @@
 import Item from "./Item"
 
-const ItemList = ({ productos }) => {
 
-  return(
+const ItemList = ({ category }) => {
+  return (
     <>
-    {
-      productos.map((p) => {
-        return(
-          <Item key={p.id}
-          title={p.title}
+      {category.products.map((p) => {
+        console.log(p.id);
+        return (
+          <Item
+            key={p.id}
+            id={p.id}
+            name={p.name}
             price={p.price}
-            stock={p.stock}  
-            url={p.url}
+            stock={p.stock}
+            image={p.image}
             alt={p.alt}
           />
-        )
-      })
-    }
+        );
+      })}
     </>
-  )
-}
+  );
+};
 
-export default ItemList
+export default ItemList;

@@ -1,9 +1,10 @@
 import { Menu, MenuButton, MenuList, MenuItem, Button, Text, MenuGroup} from "@chakra-ui/react"
 import { BiChevronDown } from "react-icons/bi";
-
+import { Link as ReactRouterLink } from 'react-router-dom'
+import { Link as ChakraLink } from '@chakra-ui/react'
 const NavProducts = () => {
   return(
-    <Menu closeOnSelect={false}>
+    <Menu>
         <MenuButton
           variant='ghost' 
           as={Button} 
@@ -15,28 +16,53 @@ const NavProducts = () => {
         </MenuButton>
         <MenuList display='flex' flexWrap='wrap' gap='6'>
           <MenuGroup title='Esencias'>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/cascadas-de-humo'>
             <MenuItem>Cascadas de Humo</MenuItem>
+          </ChakraLink>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/aceites-aromaticos'>
             <MenuItem>Aceites Aromáticos</MenuItem>
+          </ChakraLink>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/bombas-carboncillos'>
             <MenuItem>Bombas / Carboncillos</MenuItem>
+          </ChakraLink>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/inciesos-resinas-hierbas'>
             <MenuItem>Inciensos / Resinas / Hierbas</MenuItem>
+          </ChakraLink>
+          
           </MenuGroup>
           <MenuGroup title='Joyería'>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/aros'>
             <MenuItem>Aros</MenuItem>
+          </ChakraLink>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/anillos'>
             <MenuItem>Anillos</MenuItem>
+          </ChakraLink>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/llaveros'>
             <MenuItem>Llaveros</MenuItem>
+          </ChakraLink>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/collares'>
             <MenuItem>Collares</MenuItem>
+          </ChakraLink>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/pulseras'>
             <MenuItem>Pulseras</MenuItem>
+          </ChakraLink>
           </MenuGroup>
+
           <MenuGroup title='Místico & Espiritual'>
-            <MenuItem>Paños</MenuItem>
-            <MenuItem>Péndulos</MenuItem>
-            <MenuItem>Baño Ritual</MenuItem>
-            <MenuItem>Ombligueras</MenuItem>
-            <MenuItem>Bolsas de Tarot</MenuItem>
+            <ChakraLink as={ReactRouterLink} reloadDocument to='/category/pendulos'>
+              <MenuItem>Péndulos</MenuItem>
+            </ChakraLink>
+            <ChakraLink as={ReactRouterLink} reloadDocument to='/category/bolsas-de-tarot'>
+              <MenuItem>Bolsas de Tarot</MenuItem>
+            </ChakraLink>
           </MenuGroup>
           <MenuGroup title='Otros'>
-            <MenuItem>Velas</MenuItem>
-            <MenuItem>Sahumadores & Copaleras</MenuItem>
+            <ChakraLink as={ReactRouterLink} reloadDocument to='/category/velas'>
+              <MenuItem>Velas</MenuItem>
+            </ChakraLink>
+            <ChakraLink as={ReactRouterLink} reloadDocument to='/category/copalera-sahumador'>
+              <MenuItem>Sahumadores & Copaleras</MenuItem>
+            </ChakraLink>
           </MenuGroup>
         </MenuList>
       </Menu>
