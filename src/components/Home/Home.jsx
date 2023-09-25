@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 import { Hero } from './Hero'
 import { Categoria } from './Categoria'
 import { Elegirnos } from './Elegirnos'
-import { Map } from './Map'
+import { Newsletter } from './Newsletter'
 
 export const Home = () => {
   return (
@@ -10,8 +10,7 @@ export const Home = () => {
       <Hero />
       <Categoria/>
       <Elegirnos/>
-      <Map/>
-      
+      <Newsletter/>
     </Box>
   )
 }
