@@ -1,6 +1,7 @@
 import { Link, List, ListItem, Text } from "@chakra-ui/react"
 import NavProducts from "./NavProducts"
-
+import { Link as ReactRouterLink } from 'react-router-dom'
+import { Link as ChakraLink } from '@chakra-ui/react'
 
 const NavLinks = () => {
   return(
@@ -25,9 +26,9 @@ const NavLinks = () => {
             </Link> 
         </ListItem>
         <ListItem>
-            <Link>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/contact'>
               <Text fontSize='lg' fontWeight='semibold' as='p' color='white'>Contacto </Text>
-            </Link> 
+            </ChakraLink> 
         </ListItem>
       </List>
     </>

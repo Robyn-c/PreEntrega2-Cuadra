@@ -40,7 +40,7 @@ const ItemListContainer = () => {
   )}
 
   return(
-    <Container maxW='6xl'>
+    <Container maxW='1305px' py={{base: 9, lg: '70px'}} px={{base: 6, sm: 12}}>
       <Flex direction='column' alignItems='center' gap='4'>
         <SimpleGrid alignItems='center' justifyContent='center' columns={[2, null, 3]} spacing='40px'>
           <ItemList category={category}/>

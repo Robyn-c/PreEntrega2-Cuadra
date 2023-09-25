@@ -33,7 +33,7 @@ export const ItemDetailContainer = () => {
 
   if(item === null) {
     return (
-    <Container maxW='6xl'>
+    <Container maxW='1305px' py={{base: 9, lg: '70px'}} px={{base: 6, sm: 12}}>
       <Flex gap='4' alignItems='center'>
         <Heading as='h2' size='xl'>Cargando...</Heading>
         <Spinner size='lg' />

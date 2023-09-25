@@ -9,7 +9,7 @@ import Visa from '../assets/visa 1.svg'
 export const Footer = () => {
   return (
     <Box bgColor='purple.900'>
-      <Container maxW='1305px' py={{base: 9, lg: '70px'}} px={{base: 6, sm: 12}}>
+      <Container maxW='1305px' pt={{base: 9, lg: '48px'}} pb={0} px={{base: 6, sm: 12}}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} rowGap={6}>
         <Stack spacing={4}>
           <Heading as='h3' fontSize='2xl' color='gray.200'>Enlaces Rápidos</Heading>

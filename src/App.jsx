@@ -4,6 +4,7 @@ import ItemListContainer from "./components/Productos/ItemListContainer"
 import NavBar from "./components/Navbar/Navbar"
 import { Home } from "./components/Home/Home"
 import { Footer } from "./components/Footer"
+import Contact from "./components/Contact"
 
 const App = () => {
   return (
@@ -11,8 +12,10 @@ const App = () => {
       <NavBar/>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/category/:categoryId" element={<ItemListContainer />} />
         <Route exact path="/category/:categoryId/item/:itemId" element={<ItemDetailContainer/>} />
+        
       </Routes>
       <Footer/>
     </BrowserRouter>
