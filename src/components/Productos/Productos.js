@@ -34,7 +34,7 @@
     name: 'Bombas / Carboncillos',
     products: [
       {
-        id: '1',
+        id: '4',
         name: 'Carbón Redondo neutro',
         description: 'Los carbones defumadores redondos son perfectos para prender hierbas, inciensos y resinas. Están hechos de carbón vegetal natural y no contienen productos químicos ni aditivos. Son fáciles de usar y producen un humo limpio y aromático.',
         price: '7.990',
@@ -42,7 +42,7 @@
         image: 'https://cdnx.jumpseller.com/honu-piedras-y-esencias1/image/37787078/resize/640/640?1689784707'
       },
       {
-        id: '2',
+        id: '5',
         name: 'Bombas de carbón para sahumerios',
         description: 'Bombas de carbón 5 unidades.',
         price: '2.500',
@@ -50,7 +50,7 @@
         image: 'https://cdnx.jumpseller.com/honu-piedras-y-esencias1/image/35985382/resize/640/640?1685735273'
       },
       {
-        id: '3',
+        id: '6',
         name: 'Bomba Carbón Activada para Sahumerios, Inciensos y Resinas, Caja de 24 Unidades',
         description: 'Las bombas de carbón activado son el mejor combustible para sahumar hierbas, inciensos y resinas. Están hechas de carbón vegetal natural y activado con oxígeno, lo que las hace muy calientes y duraderas. Producen un humo limpio y aromático, perfecto para purificar el aire, eliminar los malos olores y crear un ambiente relajante.',
         price: '13.990',
@@ -64,7 +64,7 @@
     name: 'Cascadas de Humo',
     products: [
       {
-        id: '1',
+        id: '7',
         name: 'Cascada de Humo con forma de hoja - Café claro',
         description: 'La cascada de humo en forma de hojas es una pieza de decoración única que crea una atmósfera relajante y pacífica. Está hecha de materiales de alta calidad y está diseñada para durar. La cascada de humo es fácil de utilizar.',
         price: '8.200',
@@ -72,7 +72,7 @@
         image: 'https://cdnx.jumpseller.com/honu-piedras-y-esencias1/image/37859228/resize/640/640?1690054682',
       },
       {
-        id: '2',
+        id: '8',
         name: 'Cascada de Humo con forma de hoja - Café oscuro',
         description: 'La cascada de humo en forma de hoja es una pieza de decoración única que crea una atmósfera relajante y pacífica. Está hecha de materiales de alta calidad y está diseñada para durar. La cascada de humo es fácil de utilizar.',
         price: '8.500',
@@ -80,7 +80,7 @@
         image: 'https://cdnx.jumpseller.com/honu-piedras-y-esencias1/image/37859107/resize/640/640?1690053891',
       },
       {
-        id: '3',
+        id: '9',
         name: 'Cascada de Humo con forma de hoja - Negro brillante',
         description: 'La cascada de humo en forma de hojas es una pieza de decoración única que crea una atmósfera relajante y pacífica. Está hecha de materiales de alta calidad y está diseñada para durar. La cascada de humo es fácil de utilizar.',
         price: '8.200',
@@ -94,7 +94,7 @@
     name: 'Inciensos / Resinas/ Hierbas',
     products: [
       {
-        id: '1',
+        id: '10',
         name: 'Conito de Incienso con aroma de Canela',
         description: 'El incienso de canela se usa desde la antigüedad en China por su capacidad para atraer energías positivas: proporciona amor, paz, prosperidad, protección, atrae el dinero y la felicidad.',
         price: '2.100',
@@ -102,7 +102,7 @@
         image: 'https://cdnx.jumpseller.com/honu-piedras-y-esencias1/image/35932233/resize/640/640?1691192692',
       },
       {
-        id: '2',
+        id: '11',
         name: 'Conito de Incienso con aroma de Copal',
         description: 'Se utiliza como analgésico, expectorante, antiespasmódico y desinfectante. Disminuye los niveles estrés y depresión. Estimula las emociones y mejora el estado de ánimo. Armoniza y protege a diferentes niveles espirituales. Conecta con las vibraciones altas. Aumenta la energía personal.',
         price: '2.100',
@@ -110,7 +110,7 @@
         image: 'https://cdnx.jumpseller.com/honu-piedras-y-esencias1/image/35932424/resize/640/640?1691192698',
       },
       {
-        id: '3',
+        id: '12',
         name: 'Conito de Incienso con aroma de Lavanda',
         description: 'Por sus propiedades calmantes, la lavanda es usada para purificar los ambientes y el espíritu. Se dice que quemar un poco de flores de lavanda o utilizar el aceite de lavanda, ayuda a calmar el espíritu y aliviar el alma y la tristeza. es un aroma relajante, ideal para generar tranquilidad en un ambiente. “Este aroma es uno de los que más se utiliza para hacer meditación. Ideal para cuando sentimos estrés en general.',
         price: '2.100',
