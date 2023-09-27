@@ -1,4 +1,5 @@
 import { Button, Container, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, Heading, Image, Spinner, Stack, Text } from "@chakra-ui/react"
+import CartItems from "./CartItems"
 
 const Cart = ({ isOpen, btnRef, onClose, cartItems, clearCart }) => {
   console.log(cartItems)
@@ -24,14 +25,8 @@ const Cart = ({ isOpen, btnRef, onClose, cartItems, clearCart }) => {
           <DrawerCloseButton />
           <DrawerHeader>Carrito de Compra</DrawerHeader>
           <DrawerBody>
-          {cartItems.map((item) => ( // Remove the extra curly braces here
-            <Stack key={item.id}> {/* Add a unique key for each item */}
-              <Text>{item.name}</Text>
-              <Image src={item.image} alt={item.name} /> {/* Add src and alt attributes */}
-            </Stack>
-          ))}
-        </DrawerBody>
-
+            <CartItems cartItems={cartItems} />
+          </DrawerBody>
           <DrawerFooter>
           <Button variant='outline' mr={3} onClick={clearCart}>
               Clear
