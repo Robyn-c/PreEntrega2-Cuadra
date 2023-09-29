@@ -8,6 +8,19 @@ import Item from "./Item";
 export const ItemDetailContainer = () => {
   const { itemId, categoryId } = useParams();
   const [item, setItem] = useState(null);
+
+  function getProductById(productId) {
+    for (const category of categories) {
+      const product = category.products.find((p) => p.id === productId);
+      if (product) {
+        return product;
+      }
+    }
+    return null; // Return null if the product is not found
+  }
+  
+  const foundProduct = getProductById(itemId);
+
   useEffect(() => {
     // Función que simula un llamado asincrónico con una promesa y un retraso de 2 segundos
     const fetchData = async () => {
@@ -20,8 +33,8 @@ export const ItemDetailContainer = () => {
 
           const foundCategory = categories.find((cat) => cat.id === categoryId);
           console.log(foundCategory)
-          console.log("category" + foundCategory.products[itemId - 1])
-          setItem(foundCategory.products[itemId - 1]);
+          console.log("category" + foundProduct)
+          setItem(foundProduct);
 
         // Una vez que se resuelve la promesa, establecemos los datos en el estado
       } catch (error) {

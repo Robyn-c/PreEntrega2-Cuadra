@@ -25,20 +25,43 @@ export const ShoppingCartProvider = ({ children }) => {
     }
   };
 
-  const removeFromCart = (item) => {
-
-    if (isInCart.quantity === 1) {
-      setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id)); // if the quantity of the item is 1, remove the item from the cart
-    } else {
-      setCartItems(
-        cartItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity - 1 } // if the quantity of the item is greater than 1, decrease the quantity of the item
-            : cartItem
-        )
-      );
-    }
+  const removeFromCart = (id) => {
+    setCartItems(cartItems => {
+      return cartItems.filter(item => item.id !== id)
+    })
   };
+
+  const increaseCartQuantity = (id) => {
+    setCartItems(cartItems => {
+      if (cartItems.find(item => item.id === id) == null) {
+        return [...cartItems, { id, quantity: 1 }]
+      } else {
+        return cartItems.map(item => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1}
+          } else {
+            return item
+          }
+        })
+      }
+    })
+  }
+
+  const decreaseCartQuantity = (id) => {
+    setCartItems(cartItems => {
+      if (cartItems.find(item => item.id === id)?.quantity === 1) {
+        return cartItems.filter(item => item.id !== id)
+      } else {
+        return cartItems.map(item => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1}
+          } else {
+            return item
+          }
+        })
+      }
+    })
+  }
 
   const clearCart = () => {
     setCartItems([]); // set the cart items to an empty array
@@ -56,7 +79,7 @@ export const ShoppingCartProvider = ({ children }) => {
   }, []);
 
   return (
-    <CartContext.Provider value={{ cartItems, setCartItems, cartCount, clearCart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, setCartItems, cartCount, clearCart, addToCart, removeFromCart, increaseCartQuantity, decreaseCartQuantity  }}>
       {children}
     </CartContext.Provider>
   );

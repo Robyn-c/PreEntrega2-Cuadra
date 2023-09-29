@@ -1,6 +1,6 @@
 import { Button, Flex, HStack, Input, Text, useNumberInput } from "@chakra-ui/react"
 
-const ItemStock = ({stock}) => {
+const ItemStock = ({ stock }) => {
 
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
   useNumberInput({

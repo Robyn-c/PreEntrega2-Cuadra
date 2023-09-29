@@ -6,9 +6,9 @@ import { CartContext } from "../../context/ShoppingCartContext"
 
 
 
-const Item = ({ name, price, image, id }) => {
+const Item = ({ name, price, image, id, stock }) => {
   const { addToCart } = useContext(CartContext)
-
+  console.log("Stock: " + stock)
   return(
     <Card height='100%' maxW='sm' borderRadius='lg' border='2px' borderColor='purple.700' flex='1'>
       <CardHeader p='0' m='0'>
@@ -29,7 +29,7 @@ const Item = ({ name, price, image, id }) => {
           <Text mt='auto' color='purple.800' fontSize='2xl'>
             $ {price}
           </Text>
-          <Button onClick={() => addToCart({ name, price, image, id })}  variant='solid' colorScheme='purple' bg='purple.800'>
+          <Button onClick={() => addToCart({ name, price, image, id, stock })}  variant='solid' colorScheme='purple' bg='purple.800'>
               Añadir al carro
           </Button>
         </Flex>
