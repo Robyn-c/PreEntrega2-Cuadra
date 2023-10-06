@@ -15,6 +15,11 @@ const NavProducts = () => {
           <Text fontSize='lg' color='white'>Productos</Text>
         </MenuButton>
         <MenuList display='flex' flexWrap='wrap' gap='6'>
+        <MenuGroup>
+          <ChakraLink as={ReactRouterLink} reloadDocument to='/category/all-products'>
+            <MenuItem>Todos los productos</MenuItem>
+          </ChakraLink>
+        </MenuGroup>
           <MenuGroup title='Esencias'>
           <ChakraLink as={ReactRouterLink} reloadDocument to='/category/cascadas-de-humo'>
             <MenuItem>Cascadas de Humo</MenuItem>
@@ -28,7 +33,6 @@ const NavProducts = () => {
           <ChakraLink as={ReactRouterLink} reloadDocument to='/category/inciesos-resinas-hierbas'>
             <MenuItem>Inciensos / Resinas / Hierbas</MenuItem>
           </ChakraLink>
-          
           </MenuGroup>
           <MenuGroup title='Joyería'>
           <ChakraLink as={ReactRouterLink} reloadDocument to='/category/aros'>

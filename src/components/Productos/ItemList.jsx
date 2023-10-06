@@ -1,10 +1,9 @@
 import Item from "./Item"
 
-
 const ItemList = ({ category }) => {
   return (
     <>
-      {category.products.map((p) => {
+      {category.map((p) => {
         console.log(p.id);
         return (
           <Item

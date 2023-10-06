@@ -1,32 +1,16 @@
 import { Button, Flex, HStack, Input, Text, useNumberInput } from "@chakra-ui/react"
+import { useContext } from "react"
+import { CartContext } from "../../context/ShoppingCartContext"
 
-const ItemStock = ({ stock }) => {
+const ItemStock = ({ name, price, image, id, stock }) => {
 
-  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
-  useNumberInput({
-    step: 1,
-    defaultValue: 0,
-    min: 0,
-    max: stock,
-  })
-
-const inc = getIncrementButtonProps()
-const dec = getDecrementButtonProps()
-const input = getInputProps()
+  const { addToCart } = useContext(CartContext)
 
   return( 
     <>
     <Flex direction='column' gap='6' width='100%' alignItems='center'> 
       <Text fontSize='2xl'>Stock: {stock}</Text>
-      <Flex direction='column' alignItems='center' gap='2'>
-        <Text fontSize='2xl'>Cantidad</Text>
-        <HStack maxW='160px' spacing={0}>
-          <Button {...inc}>+</Button>
-          <Input {...input} textAlign='center'  />
-          <Button {...dec}>-</Button>
-        </HStack>
-      </Flex>
-      <Button cursor='pointer' _hover={{ bg: 'purple.600' }} as='b' size='lg' bg='purple.800' color='white'>Agregar al carrito </Button>
+      <Button onClick={() => addToCart({ name, price, image, id, stock })} cursor='pointer' _hover={{ bg: 'purple.600' }} as='b' size='lg' bg='purple.800' color='white'>Agregar al carrito </Button>
     </Flex>
     </>
   )

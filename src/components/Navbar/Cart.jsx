@@ -1,5 +1,8 @@
 import { Button, Container, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, HStack, Heading, Image, Spinner, Stack, Text, VStack } from "@chakra-ui/react"
 import CartItems from "./CartItems"
+import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
+import { Link as ReactRouterLink } from 'react-router-dom'
+import { Link as ChakraLink } from '@chakra-ui/react'
 
 const Cart = ({ isOpen, btnRef, onClose, cartItems, clearCart }) => {
  
@@ -21,7 +24,25 @@ const Cart = ({ isOpen, btnRef, onClose, cartItems, clearCart }) => {
         <Spinner size='lg' />
       </Flex>
     </Container>
-  )}
+)}
+  let order = {
+    buyer: {
+      name: "An Ecommerce Client",
+      email: "client@coderhouse.com",
+      phone: "123456789"
+      },
+    total: totalPrice,//utiliza una función global para calcular el importe total de la orden
+    items: cartItems,//mapea tu carrito para agregar aquí solo los datos solicitados de cada producto
+    date: serverTimestamp()	//método de firebase para asignar la fecha y hora del servidor
+    };
+
+    
+   function addProductFirestore() {
+    console.log('hi')
+    const db = getFirestore();
+    addDoc(collection(db, 'order'), order)
+  }
+
   return (
     <Drawer
         isOpen={isOpen}
@@ -30,8 +51,8 @@ const Cart = ({ isOpen, btnRef, onClose, cartItems, clearCart }) => {
         finalFocusRef={btnRef}
         size='md'
       >
-        <DrawerOverlay />
-        <DrawerContent>
+      <DrawerOverlay />
+      <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>Carrito de Compra</DrawerHeader>
           <Divider border='1px' borderColor='purple.900' opacity='100%'/>
@@ -48,15 +69,16 @@ const Cart = ({ isOpen, btnRef, onClose, cartItems, clearCart }) => {
                 <Button variant='outline' colorScheme="purple" mr={3} onClick={clearCart}>
                   Limpiar Carrito
                 </Button>
-                <Button w="70%" variant='solid' colorScheme="purple" bgColor='purple.800' mr={3}>
-                  Checkout
-                </Button>
+                <ChakraLink as={ReactRouterLink} reloadDocument to='/checkout'>
+                  <Button onClick={() => {addProductFirestore()}} w="70%" variant='solid' colorScheme="purple" bgColor='purple.800' mr={3}>
+                    Checkout
+                  </Button>
+                </ChakraLink>
               </HStack>
             </VStack>
-              
           </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
+      </DrawerContent>
+    </Drawer>
   )
 }
 

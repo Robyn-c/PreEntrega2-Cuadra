@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Box, Button, Divider, HStack, Heading, Image, Input, Stack, StackDivider, Text, VStack, useNumberInput } from '@chakra-ui/react';
+import React, { useContext, useState } from 'react';
+import { Button, HStack, Heading, Image, Input, Stack, Text, VStack, useNumberInput } from '@chakra-ui/react';
 import { CartContext } from '../../context/ShoppingCartContext';
 
 const CartItem = ({ name, image, quantity, stock, id, price }) => {

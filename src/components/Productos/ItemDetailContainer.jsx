@@ -1,47 +1,23 @@
 import { useEffect, useState } from "react";
 import { ItemDetail } from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import categories from "./Productos";
 import { Container, Flex, Heading, Spinner } from "@chakra-ui/react";
-import Item from "./Item";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 export const ItemDetailContainer = () => {
-  const { itemId, categoryId } = useParams();
+  const { itemId } = useParams();
   const [item, setItem] = useState(null);
 
-  function getProductById(productId) {
-    for (const category of categories) {
-      const product = category.products.find((p) => p.id === productId);
-      if (product) {
-        return product;
-      }
-    }
-    return null; // Return null if the product is not found
-  }
-  
-  const foundProduct = getProductById(itemId);
 
   useEffect(() => {
-    // Función que simula un llamado asincrónico con una promesa y un retraso de 2 segundos
-    const fetchData = async () => {
-      try {
-        await new Promise((resolve) => {
-          setTimeout(() => {
-            resolve();
-          }, 2000); // 2 segundos de retraso
-        });
+    const db = getFirestore();
 
-          const foundCategory = categories.find((cat) => cat.id === categoryId);
-          console.log(foundCategory)
-          console.log("category" + foundProduct)
-          setItem(foundProduct);
-
-        // Una vez que se resuelve la promesa, establecemos los datos en el estado
-      } catch (error) {
-        console.error("Error al obtener los datos:", error);
+    const productRef = doc(db, 'products', itemId);
+    getDoc(productRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        setItem({ id: snapshot.id, ...snapshot.data()})
       }
-    };
-    fetchData(); // Llamamos a la función fetchData en el montaje del componente
+    })
   }, [itemId]);
 
   if(item === null) {
@@ -53,8 +29,7 @@ export const ItemDetailContainer = () => {
       </Flex>
     </Container>
   )}
-  console.log("itemId:", itemId);
-  console.log(item)
+  
   return (
     <ItemDetail item={item}/>
   )

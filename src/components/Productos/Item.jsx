@@ -4,8 +4,6 @@ import { Link as ChakraLink } from '@chakra-ui/react'
 import { useContext } from "react"
 import { CartContext } from "../../context/ShoppingCartContext"
 
-
-
 const Item = ({ name, price, image, id, stock }) => {
   const { addToCart } = useContext(CartContext)
   console.log("Stock: " + stock)

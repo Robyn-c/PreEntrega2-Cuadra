@@ -1,4 +1,4 @@
-import { Divider, StackDivider, VStack } from '@chakra-ui/react'
+import { StackDivider, VStack } from '@chakra-ui/react'
 import CartItem from './CartItem'
 
 const CartItems = ({ cartItems }) => {
